@@ -4,11 +4,15 @@ Original Design by Landyn Pan and Anna Moore
 
 This version has several additional features:
 
-Planned Features:
+Planned Features: 
+- take off the one big identity box, add a text input next to each section that says 
+ "words I use to describe this aspect of myself"
+ - ability to change the "other" language next to the arrows
+ - ability to add your story at the bottom
  - "ok" buttons change the inputs to nice big text
  - add fonts and colors to info text
- - ability to adjust the language next to the arrows
- - ability to add your story at the bottom
+ - upload a picture?
+
  - change the DNA icon to something else - like a baby, move it off the body
  - ability to save an image of your unicorn for social media - maybe just instructions to screenshot it?
  - ability to link to your unicorn (requires a db, not sure if I'm going to do this part)
