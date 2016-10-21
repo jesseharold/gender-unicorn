@@ -8,10 +8,12 @@ Planned Features:
  - "ok" buttons change the inputs to nice big text
  - add fonts and colors to info text
  - ability to adjust the language next to the arrows
+ - ability to add your story at the bottom
  - change the DNA icon to something else - like a baby, move it off the body
- - ability to save an image of your unicorn for social media
+ - ability to save an image of your unicorn for social media - maybe just instructions to screenshot it?
  - ability to link to your unicorn (requires a db, not sure if I'm going to do this part)
- - incorporate tool tips w definitions from TSER
+ - add tool tips w definitions from TSER
+ - add my contact info, or add commenting (maaaybe)
 
 Implemented features (as of October 21, 2016):
  - ability to slide markers on the arrows and select birth assignment
