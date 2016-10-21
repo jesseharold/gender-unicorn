@@ -1,0 +1,144 @@
+body {
+
+}
+h1 {
+
+}
+h2 {
+
+}
+section {
+
+}
+
+footer {
+    
+}
+#unicorn {
+    width: 900px;
+    height: 900px;
+    position: relative;
+}
+.unicorn-bg {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#titleBottom {
+    width: 900px;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+    top: -210px;
+    left: -40px;
+}
+#myInfo {
+    background-color: white;
+    position: relative;
+    width: 900px;
+    height: 120px;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    font-size: 24px;
+    line-height: 36px;
+}
+.infos {
+    float: left;
+    margin-right: 30px;
+}
+.okbutton {
+    display: inline-block;
+    font-size: 17px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #85ad85;
+    color: white;
+    position: relative;
+    top: 7px;
+}
+.okbutton span {
+    position: relative;
+    top: -6px;
+    left: 3px;
+}
+.marker {
+    position: absolute;
+    left: 380px;
+    color: black;
+    font-size: 31px;
+    cursor: pointer;
+}
+.marker.toggle {
+    opacity: 0;
+}
+.tserLink {
+    position: absolute;
+    cursor: pointer;
+    color: white;
+}
+.tserLink-bottom {
+    height: 100%;
+    width: 20%;
+    right: 40px;
+}
+.tserLink-top {
+    top: 587px;
+    left: 10px;
+    width: 220px;
+    height: 50px;
+}
+#identity-1 {
+    top: 160px;
+}
+#identity-2 {
+    top: 180px;
+}
+#identity-3 {
+    top: 201px;
+}
+#expression-1 {
+    top: 270px;
+}
+#expression-2 {
+    top: 290px;
+}
+#expression-3 {
+    top: 311px;
+}
+#assignment-1 {
+    top: 407px;
+    left: 396px;
+}
+#assignment-2 {
+    top: 407px;
+    left: 527px;
+}
+#assignment-3 {
+    top: 407px;
+    left: 655px;
+}
+#sexorientation-1 {
+    top: 483px;
+}
+#sexorientation-2 {
+    top: 503px;
+}
+#sexorientation-3 {
+    top: 524px;
+}
+#romorientation-1 {
+    top: 595px;
+}
+#romorientation-2 {
+    top: 615px;
+}
+#romorientation-3 {
+    top: 636px;
+}
+/* responsive styles! */
+@media screen and (max-width: 1015px) {
+    
+}
