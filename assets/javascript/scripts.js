@@ -5,9 +5,11 @@ function createShareURL(){
 	// to a query string
 	var querystring = "?";
 	for (prop in myInfos){
-		querystring += prop + "=" + encodeURIComponent(myInfos[prop]) + "&";
+		if (prop != undefined && myInfos[prop] != undefined){
+			querystring += prop + "=" + encodeURIComponent(myInfos[prop]) + "&";
+		}
 	}
-	return querystring;
+	console.log(querystring);
 }
 function initPage(){
 	// look to see if there's a query string
@@ -65,8 +67,9 @@ function initPage(){
 		$(this).css("opacity", 0);
 		$(".customOther .overlay .editButton").css("left", 0);
 	});
+	$("#shareButton").on("click", createShareURL);
 }
 function populateForm(obj){
-
+	console.log(obj);
 }
 $(document).ready(initPage);

@@ -33,6 +33,13 @@ footer {
     top: -210px;
     left: -40px;
 }
+#shareButton {
+    position: absolute;
+    top: 30px;
+    right: 50px;    
+    opacity: .7;
+    cursor: pointer;
+}
 #myInfo {
     background-color: white;
     position: relative;
