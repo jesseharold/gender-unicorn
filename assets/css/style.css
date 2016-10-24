@@ -45,24 +45,81 @@ footer {
 }
 .infos {
     float: left;
-    margin-right: 30px;
+    margin-right: 10px;
 }
-.okbutton {
+.okButton {
     display: inline-block;
     font-size: 17px;
     width: 24px;
     height: 24px;
     cursor: pointer;
     border-radius: 50%;
-    background-color: #85ad85;
+    background-color: #a7bba7;
     color: white;
     position: relative;
     top: 7px;
 }
-.okbutton span {
+.okButton span {
     position: relative;
     top: -6px;
     left: 3px;
+}
+.editButton {
+    font-size: 12px;
+    padding: 5px;
+    position: relative;
+    top: -4px;
+    left: 5px;
+    cursor: pointer;
+    color: #aaa;
+}
+.overlayMe {
+    position: relative;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding: 3%;
+    box-sizing: border-box;
+    font-size: 30px;
+    color: #673AB7;
+    font-family: monospace;
+}
+.idWords .overlay {
+    width: 280px;
+    font-size: 20px;
+    top: -2px;
+}
+.idWords .okButton {
+    top: -2px;
+}
+.idWords .okButton span {
+    top: 2px;
+}
+.overlayMe.idWords {
+    position: absolute;
+    top: 137px;
+    left: 620px;
+}
+.overlayMe.idWords#genderExp {
+    top: 246px;
+    left: 650px;
+}
+.overlayMe.idWords#genderAssign {
+    top: 356px;
+    left: 680px;
+}
+.overlayMe.idWords#sexOrient {
+    top: 460px;
+    left: 696px;
+}
+.overlayMe.idWords#romOrient {
+    top: 572px;
+    left: 710px;
 }
 .marker {
     position: absolute;

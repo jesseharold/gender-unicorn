@@ -2,24 +2,23 @@ This is an interactive version of the Gender Unicorn, which was created by Trans
 http://www.transstudent.org/gender?gclid=CJil7-7a688CFUdafgodfM0LUw
 Original Design by Landyn Pan and Anna Moore
 
+Hosted at:
+http://secret-harbor-95149.herokuapp.com/
+
 This version has several additional features:
 
 Planned Features: 
-- take off the one big identity box, add a text input next to each section that says 
- "words I use to describe this aspect of myself"
- - ability to change the "other" language next to the arrows
- - ability to add your story at the bottom
- - "ok" buttons change the inputs to nice big text
- - add fonts and colors to info text
- - upload a picture?
-
+ - set values of sliders into query string object, too
+ - read data from query string, set page values
+ - ability to change the "other" next to the arrows
  - change the DNA icon to something else - like a baby, move it off the body
- - ability to save an image of your unicorn for social media - maybe just instructions to screenshot it?
- - ability to link to your unicorn (requires a db, not sure if I'm going to do this part)
  - add tool tips w definitions from TSER
  - add my contact info, or add commenting (maaaybe)
 
-Implemented features (as of October 21, 2016):
+Implemented features (as of October 23, 2016):
+ - add fonts and colors to info text
+ - separate data, create share URL with data in the query string
+ - add a text input next to each section that says  "words I use to describe this aspect of myself"
  - ability to slide markers on the arrows and select birth assignment
  - ability to select preferred pronoun(s), (she, he, they, custom)
  - ability to add optional identity words (like genderqueer, trans man, cisgender woman, gender non-conforming, etc.)
