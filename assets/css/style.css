@@ -40,6 +40,34 @@ footer {
     opacity: .7;
     cursor: pointer;
 }
+#popup {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#popupBG {
+    background-color: black;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#shareForm {
+    z-index: 10;
+    position: relative;
+    left: 40%;
+    top: 100px;
+    background-color: cornsilk;
+    width: 200px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 11px;
+}
 #myInfo {
     background-color: white;
     position: relative;

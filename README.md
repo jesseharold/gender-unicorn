@@ -8,8 +8,7 @@ http://secret-harbor-95149.herokuapp.com/
 This version has several additional features:
 
 Planned Features: 
- - set values of sliders into query string object, too
- - read data from query string, set page values
+ - set page values from query obj
 
  - change the DNA icon to something else - like a baby, take it off the body
  - add tool tips w definitions from TSER
@@ -17,7 +16,7 @@ Planned Features:
 Implemented features (as of October 23, 2016):
  - ability to change the "other" next to the arrows
  - add fonts and colors to info text
- - separate data, create share URL with data in the query string
+ - separate data, create share URL that puts data in the query string
  - add a text input next to each section that says  "words I use to describe this aspect of myself"
  - ability to slide markers on the arrows and select birth assignment
  - ability to select preferred pronoun(s), (she, he, they, custom)

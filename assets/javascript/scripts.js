@@ -9,7 +9,8 @@ function createShareURL(){
 			querystring += prop + "=" + encodeURIComponent(myInfos[prop]) + "&";
 		}
 	}
-	console.log(querystring);
+	// add full URL and pop up an overlay with a selectable copyable link
+	$("#popup").show().find("input").val(querystring);
 }
 function initPage(){
 	// look to see if there's a query string
@@ -32,7 +33,11 @@ function initPage(){
 	$( ".marker.slider" ).draggable({
 	  axis: "x",
 	  containment: [380, 0, 624, 0]
+	}).mouseup(function(){
+		// add slider positions to the data object
+		myInfos[$(this).attr("id")] = $(this).css("left");
 	});
+
 	$( ".marker.toggle" ).click(function(){
 		if ($(this).css("opacity") == 1){
 			$(this).css("opacity", 0);
@@ -43,7 +48,6 @@ function initPage(){
 	$( ".okButton" ).click(function(){
 		// find the text input that's a sibling
 		// if it has text, show an overlay a div that has that text
-		// and a nice style
 		// and a button to edit/hide overlay
 		var label = $(this).prev("input").attr("id");
 		if (typeof label === "undefined") {
@@ -71,5 +75,6 @@ function initPage(){
 }
 function populateForm(obj){
 	console.log(obj);
+	// show overlays where needed, set the text, and set slider values
 }
 $(document).ready(initPage);
