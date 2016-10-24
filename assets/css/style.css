@@ -43,6 +43,12 @@ footer {
     font-size: 24px;
     line-height: 36px;
 }
+#prefPronoun {
+    width: 470px;
+}
+#prefName {
+    width: 345px;
+}
 .infos {
     float: left;
     margin-right: 10px;
@@ -120,6 +126,53 @@ footer {
 .overlayMe.idWords#romOrient {
     top: 572px;
     left: 710px;
+}
+.customOther {    
+    top: 89px;
+    left: 710px;
+    width: 210px;
+    margin: 0;
+    padding: 0;
+}
+.customOther .otherForm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%
+}
+.customOther .editButton.showForm {
+    position: relative;
+    left: 115px;
+    top: 2px;
+}
+.customOther#otherGID {
+    top: 89px;
+}
+.customOther#otherGEx {
+    top: 179px;
+}
+.customOther#otherSXO {
+    top: 368px;
+}
+.customOther#otherRMO {
+    top: 457px;
+}
+.customOther .okButton {
+    top: -3px;
+    top: -2px;
+    background-color: wheat;
+}
+.customOther .okButton span {
+    top: 2px;
+}
+.customOther .overlay {
+    font-size: 24px;
+    top: -3px;
+    padding-top: 0;
+}
+.customOther#otherGEx .editButton.showForm{
+    left: 40px;
 }
 .marker {
     position: absolute;

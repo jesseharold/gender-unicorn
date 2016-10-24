@@ -60,6 +60,11 @@ function initPage(){
 		//console.log($(this).parent(".overlay"));
 		$(this).parent(".overlay").remove();
 	});
+	$(".editButton.showForm").on("click", function(){
+		$(this).next(".otherForm").show();
+		$(this).css("opacity", 0);
+		$(".customOther .overlay .editButton").css("left", 0);
+	});
 }
 function populateForm(obj){
 

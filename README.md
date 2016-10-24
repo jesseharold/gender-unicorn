@@ -10,12 +10,12 @@ This version has several additional features:
 Planned Features: 
  - set values of sliders into query string object, too
  - read data from query string, set page values
- - ability to change the "other" next to the arrows
- - change the DNA icon to something else - like a baby, move it off the body
+
+ - change the DNA icon to something else - like a baby, take it off the body
  - add tool tips w definitions from TSER
- - add my contact info, or add commenting (maaaybe)
 
 Implemented features (as of October 23, 2016):
+ - ability to change the "other" next to the arrows
  - add fonts and colors to info text
  - separate data, create share URL with data in the query string
  - add a text input next to each section that says  "words I use to describe this aspect of myself"
