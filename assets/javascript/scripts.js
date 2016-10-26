@@ -3,7 +3,7 @@ var myInfos = {};
 function createShareURL(){
 	// get all data from the page and write it
 	// to a query string
-	var querystring = window.location.href+"?";
+	var querystring = "?";
 	for (prop in myInfos){
 		if (prop != undefined && myInfos[prop] != undefined){
 			querystring += prop + "=" + encodeURIComponent(myInfos[prop]) + "&";
@@ -77,7 +77,16 @@ function initPage(){
 	});
 }
 function populateForm(obj){
-	console.log(obj);
+	//console.log(obj);
 	// show overlays where needed, set the text, and set slider values
+	for (prop in obj){
+		if (prop === "expression-1" || prop === "expression-2" || prop === "expression-3" ||
+			prop === "identity-1" || prop === "identity-2" || prop === "identity-3" ||
+			prop === "romorientation-1" || prop === "romorientation-2" || prop === "romorientation-3" ||
+			prop === "sexorientation-1" || prop === "sexorientation-2" || prop === "sexorientation-3"
+			){
+			$("#"+prop).css("left", obj[prop]);
+		}
+	}
 }
 $(document).ready(initPage);

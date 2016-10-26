@@ -8,7 +8,7 @@ http://secret-harbor-95149.herokuapp.com/
 This version has several additional features:
 
 Planned Features: 
- - set page values from query obj
+ - set page values from query obj - in progress
  - add tool tips w definitions from TSER
 
 Implemented features (as of October 23, 2016):
