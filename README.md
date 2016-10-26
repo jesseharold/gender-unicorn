@@ -9,8 +9,6 @@ This version has several additional features:
 
 Planned Features: 
  - set page values from query obj
-
- - change the DNA icon to something else - like a baby, take it off the body
  - add tool tips w definitions from TSER
 
 Implemented features (as of October 23, 2016):
@@ -22,3 +20,4 @@ Implemented features (as of October 23, 2016):
  - ability to select preferred pronoun(s), (she, he, they, custom)
  - ability to add optional identity words (like genderqueer, trans man, cisgender woman, gender non-conforming, etc.)
  - link to TSER
+ - change the DNA icon to something else - like a baby, take it off the body
