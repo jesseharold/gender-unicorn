@@ -3,14 +3,14 @@ var myInfos = {};
 function createShareURL(){
 	// get all data from the page and write it
 	// to a query string
-	var querystring = "?";
+	var querystring = window.location.href+"?";
 	for (prop in myInfos){
 		if (prop != undefined && myInfos[prop] != undefined){
 			querystring += prop + "=" + encodeURIComponent(myInfos[prop]) + "&";
 		}
 	}
 	// add full URL and pop up an overlay with a selectable copyable link
-	$("#popup").show().find("input").val(querystring);
+	$("#popup").show().find("textarea").val(querystring);
 }
 function initPage(){
 	// look to see if there's a query string
@@ -72,6 +72,9 @@ function initPage(){
 		$(".customOther .overlay .editButton").css("left", 0);
 	});
 	$("#shareButton").on("click", createShareURL);
+	$("#popupBG").on("click", function(){
+		$("#popup").hide();
+	});
 }
 function populateForm(obj){
 	console.log(obj);
