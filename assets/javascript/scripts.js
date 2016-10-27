@@ -25,7 +25,7 @@ function initPage(){
 		}
 	});
 	$( ".okButton" ).click(function(){
-		showOverlay($(this).parent(".overlayMe").attr("id"), $(this).prev("input").val());
+		showOverlay($(this).parents(".overlayMe").attr("id"), $(this).prev("input").val());
 	});
 	$("#unicorn").on("click", ".editButton", function(){
 		//console.log($(this).parent(".overlay"));
@@ -45,6 +45,7 @@ function showOverlay(id, text){
 	// find the text input that's a sibling
 	// if it has text, show an overlay a div that has that text
 	// and a button to edit/hide overlay
+	console.log(id+", "+text);
 	var label = $("#"+id).find("input").attr("id");
 	if (typeof label === "undefined") {
 		label = "";
@@ -54,6 +55,8 @@ function showOverlay(id, text){
 
 	if (text.length > 1){
 		$("#"+id).append("<div class='overlay'>" + label + text + "<span class='editButton'>edit</span></div>");
+	} else {
+		$("#"+id).parent(".otherForm").hide();
 	}
 	myInfos[id] = text;
 }
@@ -75,26 +78,29 @@ function populateForm(obj){
 	// show overlays where needed, set the text, and set slider values
 	for (prop in obj){
 		//console.log(prop);
-		if (prop === "expression-1" || prop === "expression-2" || prop === "expression-3" ||
-			prop === "identity-1" || prop === "identity-2" || prop === "identity-3" ||
-			prop === "romorientation-1" || prop === "romorientation-2" || prop === "romorientation-3" ||
-			prop === "sexorientation-1" || prop === "sexorientation-2" || prop === "sexorientation-3"
+		if (prop === "expr-1" || prop === "expr-2" || prop === "expr-3" ||
+			prop === "id-1" || prop === "id-2" || prop === "id-3" ||
+			prop === "romor-1" || prop === "romor-2" || prop === "romor-3" ||
+			prop === "sexor-1" || prop === "sexor-2" || prop === "sexor-3"
 			)
 		{
 
 			$("#"+prop).css("left", obj[prop]);
 			myInfos[prop] = obj[prop];
 		}
-		else if (prop === "prefName" || prop === "prefPronoun" || prop === "genderID" || 
+		else if (prop === "name" || prop === "pron" || prop === "genderID" || 
 			prop === "genderExp" || prop === "genderAssign" || prop === "romOrient" || prop === "sexOrient") 
 		{
 			showOverlay(prop, obj[prop]);
 		}
-		else if (prop.indexOf("assignment-") > -1)
+		else if (prop.indexOf("assign-") > -1)
 		{
 			if (obj[prop] === "true"){
 				$("#"+prop).css("opacity", 1);
 			}
+		}
+		else if (prop.indexOf("other") === 0){
+			showOverlay(prop, obj[prop]);
 		}
 	}
 }

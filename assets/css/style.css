@@ -35,7 +35,7 @@ footer {
 }
 #shareButton {
     position: absolute;
-    top: 30px;
+    top: 10px;
     right: 50px;    
     opacity: .7;
     cursor: pointer;
@@ -78,10 +78,10 @@ footer {
     font-size: 24px;
     line-height: 36px;
 }
-#prefPronoun {
+#pron {
     width: 470px;
 }
-#prefName {
+#name {
     width: 345px;
 }
 .infos {
@@ -235,52 +235,52 @@ footer {
     width: 220px;
     height: 50px;
 }
-#identity-1 {
+#id-1 {
     top: 160px;
 }
-#identity-2 {
+#id-2 {
     top: 180px;
 }
-#identity-3 {
+#id-3 {
     top: 201px;
 }
-#expression-1 {
+#expr-1 {
     top: 270px;
 }
-#expression-2 {
+#expr-2 {
     top: 290px;
 }
-#expression-3 {
+#expr-3 {
     top: 311px;
 }
-#assignment-1 {
+#assign-1 {
     top: 407px;
     left: 396px;
 }
-#assignment-2 {
+#assign-2 {
     top: 407px;
     left: 527px;
 }
-#assignment-3 {
+#assign-3 {
     top: 407px;
     left: 655px;
 }
-#sexorientation-1 {
+#sexor-1 {
     top: 483px;
 }
-#sexorientation-2 {
+#sexor-2 {
     top: 503px;
 }
-#sexorientation-3 {
+#sexor-3 {
     top: 524px;
 }
-#romorientation-1 {
+#romor-1 {
     top: 595px;
 }
-#romorientation-2 {
+#romor-2 {
     top: 615px;
 }
-#romorientation-3 {
+#romor-3 {
     top: 636px;
 }
 /* responsive styles! */
