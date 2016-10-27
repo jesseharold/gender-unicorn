@@ -1,4 +1,5 @@
 var myInfos = {};
+var urlParams;
 
 function createShareURL(){
 	// get all data from the page and write it
@@ -16,20 +17,8 @@ function initPage(){
 	// look to see if there's a query string
 	// init page with those values, if they
 	// exist
-
-	var url = $(location).attr('href'); //get current url
-	var decodedUrl = decodeURIComponent(url).split("?").pop();
-	if (typeof decodedUrl === "string" && decodedUrl.length > 1){
-		var urlParams = decodedUrl.split("&");
-		for (var i = 0; i < urlParams.length; i++) {
-			var thisProp = urlParams[i].split("=");
-			if (thisProp[0].length > 1){
-				myInfos[thisProp[0]] = thisProp[1];
-			}
-		}
-		populateForm(myInfos);
-	}
-
+	decodeQueryString();
+	populateForm(urlParams);
 	$( ".marker.slider" ).draggable({
 	  axis: "x",
 	  containment: [380, 0, 624, 0]
@@ -46,21 +35,7 @@ function initPage(){
 		}
 	});
 	$( ".okButton" ).click(function(){
-		// find the text input that's a sibling
-		// if it has text, show an overlay a div that has that text
-		// and a button to edit/hide overlay
-		var label = $(this).prev("input").attr("id");
-		if (typeof label === "undefined") {
-			label = "";
-		} else {
-			label += ": ";
-		}
-		var words = $(this).prev("input").val();
-		if (words.length > 1){
-			$(this).parent().append("<div class='overlay'>" + label + words + "<span class='editButton'>edit</span></div>");
-		}
-		var prop = $(this).parent("div").attr("id");
-		myInfos[prop] = words;
+		showOverlay($(this).parent(".overlayMe").attr("id"), $(this).prev("input").val());
 	});
 	$("#unicorn").on("click", ".editButton", function(){
 		//console.log($(this).parent(".overlay"));
@@ -76,16 +51,55 @@ function initPage(){
 		$("#popup").hide();
 	});
 }
+function showOverlay(id, text){
+	// find the text input that's a sibling
+	// if it has text, show an overlay a div that has that text
+	// and a button to edit/hide overlay
+	var label = $("#"+id).find("input").attr("id");
+	if (typeof label === "undefined") {
+		label = "";
+	} else {
+		label += ": ";
+	}
+
+	if (text.length > 1){
+		$("#"+id).append("<div class='overlay'>" + label + text + "<span class='editButton'>edit</span></div>");
+	}
+	myInfos[id] = text;
+}
+
+function decodeQueryString() {
+    var match,
+        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+        query  = window.location.search.substring(1);
+
+    urlParams = {};
+    while (match = search.exec(query))
+       urlParams[decode(match[1])] = decode(match[2]);
+}
+
+
 function populateForm(obj){
-	//console.log(obj);
+	console.log(obj);
 	// show overlays where needed, set the text, and set slider values
 	for (prop in obj){
+		//console.log(prop);
 		if (prop === "expression-1" || prop === "expression-2" || prop === "expression-3" ||
 			prop === "identity-1" || prop === "identity-2" || prop === "identity-3" ||
 			prop === "romorientation-1" || prop === "romorientation-2" || prop === "romorientation-3" ||
 			prop === "sexorientation-1" || prop === "sexorientation-2" || prop === "sexorientation-3"
-			){
+			)
+		{
+
 			$("#"+prop).css("left", obj[prop]);
+			myInfos[prop] = obj[prop];
+		}
+		else if (prop === "prefName" || prop === "prefPronoun" || prop === "genderID" || 
+			prop === "genderExp" || prop === "genderAssign" || prop === "romOrient" || prop === "sexOrient") 
+		{
+			showOverlay(prop, obj[prop]);
 		}
 	}
 }

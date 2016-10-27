@@ -8,10 +8,11 @@ http://secret-harbor-95149.herokuapp.com/
 This version has several additional features:
 
 Planned Features: 
- - set page values from query obj - in progress
  - add tool tips w definitions from TSER
+ - give focus to text input when you click OK or Edit button
 
-Implemented features (as of October 23, 2016):
+Implemented features (as of October 27, 2016):
+ - set page values from query string
  - ability to change the "other" next to the arrows
  - add fonts and colors to info text
  - separate data, create share URL that puts data in the query string
