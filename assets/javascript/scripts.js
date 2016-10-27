@@ -18,8 +18,10 @@ function initPage(){
 	$( ".marker.toggle" ).click(function(){
 		if ($(this).css("opacity") == 1){
 			$(this).css("opacity", 0);
+			myInfos[$(this).attr("id")] = "false";
 		} else {
 			$(this).css("opacity",1);
+			myInfos[$(this).attr("id")] = "true";
 		}
 	});
 	$( ".okButton" ).click(function(){
@@ -69,7 +71,7 @@ function decodeQueryString() {
 }
 
 function populateForm(obj){
-	console.log(obj);
+	//console.log(obj);
 	// show overlays where needed, set the text, and set slider values
 	for (prop in obj){
 		//console.log(prop);
@@ -87,6 +89,12 @@ function populateForm(obj){
 			prop === "genderExp" || prop === "genderAssign" || prop === "romOrient" || prop === "sexOrient") 
 		{
 			showOverlay(prop, obj[prop]);
+		}
+		else if (prop.indexOf("assignment-") > -1)
+		{
+			if (obj[prop] === "true"){
+				$("#"+prop).css("opacity", 1);
+			}
 		}
 	}
 }
