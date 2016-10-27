@@ -15,6 +15,7 @@ function initPage(){
 		myInfos[$(this).attr("id")] = $(this).css("left");
 	});
 
+	// event listeners
 	$( ".marker.toggle" ).click(function(){
 		if ($(this).css("opacity") == 1){
 			$(this).css("opacity", 0);
@@ -28,11 +29,11 @@ function initPage(){
 		showOverlay($(this).parents(".overlayMe").attr("id"), $(this).prev("input").val());
 	});
 	$("#unicorn").on("click", ".editButton", function(){
-		//console.log($(this).parent(".overlay"));
+		$(this).parents(".overlayMe").find("input").focus();
 		$(this).parent(".overlay").remove();
 	});
 	$(".editButton.showForm").on("click", function(){
-		$(this).next(".otherForm").show();
+		$(this).next(".otherForm").show().find("input").focus();
 		$(this).css("opacity", 0);
 		$(".customOther .overlay .editButton").css("left", 0);
 	});
@@ -41,22 +42,23 @@ function initPage(){
 		$("#popup").hide();
 	});
 }
+
 function showOverlay(id, text){
 	// find the text input that's a sibling
 	// if it has text, show an overlay a div that has that text
 	// and a button to edit/hide overlay
-	console.log(id+", "+text);
+	//console.log(id+", "+text);
 	var label = $("#"+id).find("input").attr("id");
 	if (typeof label === "undefined") {
 		label = "";
 	} else {
 		label += ": ";
 	}
-
 	if (text.length > 1){
 		$("#"+id).append("<div class='overlay'>" + label + text + "<span class='editButton'>edit</span></div>");
 	} else {
-		$("#"+id).parent(".otherForm").hide();
+		$("#"+id).find(".otherForm").hide();
+		$("#"+id).find(".showForm").css("opacity", 1);
 	}
 	myInfos[id] = text;
 }

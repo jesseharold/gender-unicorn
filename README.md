@@ -9,7 +9,6 @@ This version has several additional features:
 
 Planned Features: 
  - add tool tips w definitions from TSER
- - give focus to text input when you click OK or Edit button
 
 Implemented features (as of October 27, 2016):
  - set page values from query string
