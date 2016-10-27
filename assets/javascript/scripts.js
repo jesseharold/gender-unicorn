@@ -1,18 +1,6 @@
 var myInfos = {};
 var urlParams;
 
-function createShareURL(){
-	// get all data from the page and write it
-	// to a query string
-	var querystring = "?";
-	for (prop in myInfos){
-		if (prop != undefined && myInfos[prop] != undefined){
-			querystring += prop + "=" + encodeURIComponent(myInfos[prop]) + "&";
-		}
-	}
-	// add full URL and pop up an overlay with a selectable copyable link
-	$("#popup").show().find("textarea").val(querystring);
-}
 function initPage(){
 	// look to see if there's a query string
 	// init page with those values, if they
@@ -80,7 +68,6 @@ function decodeQueryString() {
        urlParams[decode(match[1])] = decode(match[2]);
 }
 
-
 function populateForm(obj){
 	console.log(obj);
 	// show overlays where needed, set the text, and set slider values
@@ -103,4 +90,19 @@ function populateForm(obj){
 		}
 	}
 }
+
+function createShareURL(){
+	// get all data from the page and write it
+	// to a query string
+	var querystring = "?";
+	for (prop in myInfos){
+		if (prop != undefined && myInfos[prop] != undefined){
+			querystring += prop + "=" + encodeURIComponent(myInfos[prop]) + "&";
+		}
+	}
+	// add full URL and pop up an overlay with a selectable copyable link
+	var url = [location.protocol, '//', location.host, location.pathname].join('');
+	$("#popup").show().find("textarea").val(url+querystring);
+}
+
 $(document).ready(initPage);

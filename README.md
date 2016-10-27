@@ -8,6 +8,8 @@ http://secret-harbor-95149.herokuapp.com/
 This version has several additional features:
 
 Planned Features: 
+ - birth assignment not getting added to query, fix
+ - optional "other" text geting added as "undefined", fix
  - add tool tips w definitions from TSER
  - give focus to text input when you click OK or Edit button
 
