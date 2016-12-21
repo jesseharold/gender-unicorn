@@ -9,6 +9,8 @@ This version has several additional features:
 
 Planned Features: 
  - add tool tips w definitions from TSER
+ - add a link shortening API
+ - make it so return sets the value on text inputs
 
 Implemented features (as of October 27, 2016):
  - set page values from query string
