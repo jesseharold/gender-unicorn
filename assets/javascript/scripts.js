@@ -7,16 +7,13 @@ function initPage(){
 	// exist
 	decodeQueryString();
 	populateForm(urlParams);
+
+	// event listeners
 	$( ".marker.slider" ).draggable({
 	  axis: "x",
 	  containment: [380, 0, 624, 0]
-	}).mouseup(function(){
-		// add slider positions to the data object
-		myInfos[$(this).attr("id")] = $(this).css("left");
 	});
-
-	// event listeners
-	$( ".marker.toggle" ).click(function(){
+	$(".marker.toggle").click(function(){
 		if ($(this).css("opacity") == 1){
 			$(this).css("opacity", 0);
 			myInfos[$(this).attr("id")] = "false";
@@ -25,13 +22,14 @@ function initPage(){
 			myInfos[$(this).attr("id")] = "true";
 		}
 	});
-	$( ".okButton" ).click(function(){
+	$(".okButton").click(function(){
 		showOverlay($(this).parents(".overlayMe").attr("id"), $(this).prev("input").val());
 	});
 	$("#unicorn").on("click", ".editButton", function(){
 		$(this).parents(".overlayMe").find("input").focus();
 		$(this).parent(".overlay").remove();
-	});
+	})
+	.on("mouseup", saveData);
 	$(".editButton.showForm").on("click", function(){
 		$(this).next(".otherForm").show().find("input").focus();
 		$(this).css("opacity", 0);
@@ -40,6 +38,20 @@ function initPage(){
 	$("#shareButton").on("click", createShareURL);
 	$("#popupBG").on("click", function(){
 		$("#popup").hide();
+	});
+}
+
+
+function saveData(){
+	//go through all sliders
+	$(".marker.slider").each(function(i, element){
+		myInfos[$(this).attr("id")] = $(this).css("left");
+		//console.log("slider: " + myInfos[$(this).attr("id")]);
+	});
+	//go through all text inputs
+	$(".shareInfo").each(function(i, element){
+		myInfos[$(this).attr("id")] = $(this).val();
+		//console.log("input: " + myInfos[$(this).attr("id")]);
 	});
 }
 
@@ -112,7 +124,7 @@ function createShareURL(){
 	// to a query string
 	var querystring = "?";
 	for (prop in myInfos){
-		if (prop != undefined && myInfos[prop] != undefined){
+		if (prop != undefined && myInfos[prop] != undefined && myInfos[prop] !== "" && myInfos[prop] !== "380px"){
 			querystring += prop + "=" + encodeURIComponent(myInfos[prop]) + "&";
 		}
 	}
